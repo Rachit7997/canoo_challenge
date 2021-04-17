@@ -23,5 +23,15 @@ Home Automation
 2.  npm install
 3.  npm start
 
-### Auto Logging in the terminal window of Django
+### **Auto Logging in the terminal window of Django**
+
+### If the frontend is different than http://localhost:3000, let's say 3001
+### then replace the following in canoo_challenge-main/beckend/settings.py
+####    CORS_ORIGIN_WHITELIST = [
+####    'http://localhost:3000'
+####    ]
+### with
+####    CORS_ORIGIN_WHITELIST = [
+####    'http://localhost:3001'
+####    ]
 

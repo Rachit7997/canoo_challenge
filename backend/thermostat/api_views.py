@@ -21,3 +21,12 @@ class TemperatureRetrieveUpdate(RetrieveUpdateAPIView):
     queryset = Temperature.objects.all()
     serializer_class = TemperatureSerializer
     lookup_field = 'id'
+
+    def update(self, request, *args, **kwargs):
+        response = super().update(request, *args, **kwargs)
+        if response.status_code == 200:
+            from django.core.cache import cache
+            Temp = response.data
+            cache.set(f"light_data_{Temp['id']}",{
+                'temp': Temp['temp']
+            })
