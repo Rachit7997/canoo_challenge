@@ -22,7 +22,7 @@ urlpatterns = [
     path('api/v1/lights/', LightList.as_view()),
     path('api/v1/thermostat/', TemperatureList.as_view()),
     path('api/v1/lights/new', LightCreate.as_view()),
-    path('api/v1/thermostat/new', TemperatureCreate.as_view()),
+    path('api/v1/thermostat/new', TemperatureCreate.as_view()), # It will not be used
     path('api/v1/lights/<int:id>/', 
         LightRetrieveUpdateDestroy.as_view()
     ),

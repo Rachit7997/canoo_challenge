@@ -5,16 +5,24 @@ from lights.models import Light
 from lights.serializers import LightSerializer
 
 class LightList(ListAPIView):
+# Responses with the list of Lights 
     queryset = Light.objects.all()
     serializer_class = LightSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('id',)
 
-class LightCreate(CreateAPIView):
+class LightCreate(CreateAPIView): 
+# Creates Light and Responses with JSON of newly created Light
     serializer_class = LightSerializer
 
+
 class LightRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
-    queryset = Light.objects.all()
+    """
+    Resposnes with JSON of a queried light
+    Update the Light and send the updated Light as JSON
+    Delete the Light and send the deleted Light as JSON
+    """ 
+    queryset = Light.objects.all()                               
     serializer_class = LightSerializer
     lookup_field = 'id'
 
