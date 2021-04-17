@@ -1,6 +1,10 @@
 # canoo web application challenge
 Home Automation
 ----------------
+The Backend of the web application is built using django-rest framework. The django by default uses squlite for RDBMS. It also provides Templates for view in the absense of frontend.
+
+The frontend of the web application is developed in ReactJS that provides dynamic html rendering by handling states of the frontend running on the client software (browser).  
+
 ## Installation instructions
 ###    Backend
 #### Open a terminal window in Home Automation directory
